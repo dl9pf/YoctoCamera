@@ -80,9 +80,7 @@ unzip $FILE_MULTIMEDIA
 cp -ar meta-openembedded-dizzy/$FOLDER_MULTIMEDIA ../BUILD/
 cd ..
 
-cd BUILD
-source $FOLDER_YOCTO/oe-init-build-env YoctoCamera
-
+ln -sf ../meta-YoctoCamera BUILD/meta-YoctoCamera
 
 fi
 

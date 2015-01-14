@@ -20,6 +20,9 @@ FOLDER_RASPBERRYPI=meta-rpi
 # OE meta-multimedia URLs
 FOLDER_MULTIMEDIA=meta-multimedia
 
+# meta-YoctoCamera
+FOLDER_YOCTOCAMERA=meta-YoctoCamera
+
 cd BUILD
 source $FOLDER_YOCTO/oe-init-build-env YoctoCamera
 
