@@ -54,6 +54,7 @@ FILE_MULTIMEDIA=meta-openembedded.zip
 BRANCH_MULTIMEDIA=dizzy
 FOLDER_MULTIMEDIA=meta-multimedia
 
+FOLDER_METAOE=meta-oe
 
 if $TAR ; then
 echo ""
@@ -78,6 +79,7 @@ cd DL
 rm -rf meta-openembedded-dizzy
 unzip $FILE_MULTIMEDIA
 cp -ar meta-openembedded-dizzy/$FOLDER_MULTIMEDIA ../BUILD/
+cp -ar meta-openembedded-dizzy/$FOLDER_METAOE ../BUILD/
 cd ..
 
 ln -sf ../meta-YoctoCamera BUILD/meta-YoctoCamera

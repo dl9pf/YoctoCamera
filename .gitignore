@@ -1,2 +1,4 @@
 DL/
 BUILD/
+downloads
+sstate-cache
