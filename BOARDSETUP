@@ -1,0 +1,30 @@
+
+Execute 
+
+./1_download.sh
+
+./2_setup.sh
+
+./3_build.sh
+
+
+Use:
+
+dd if=BUILD/YoctoCamera/tmp/deploy/images/raspberrypi/<rpi-sdimg> of=/dev/<sdcard> bs=1M
+
+mount the first partition and copy the folder
+BUILD/YoctoCamera/tmp/deploy/images/raspberrypi/extlinux
+onto the sdcard.
+
+
+The board has network configure and should come up with a wifi hotspot named "YoctoCamera".
+
+If that does not work out of the box, connect the serial2usb-cable and inspect the
+terminal.
+
+A service starts mjpgstreamer on port 8080.
+
+Have fun !
+
+
+
