@@ -23,5 +23,5 @@ FOLDER_MULTIMEDIA=meta-multimedia
 cd BUILD
 source $FOLDER_YOCTO/oe-init-build-env YoctoCamera
 
-bitbake rpi-hwup-image
+bitbake rpi-basic-image
 

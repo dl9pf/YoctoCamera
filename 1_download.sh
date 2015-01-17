@@ -42,6 +42,7 @@ FOLDER_YOCTO=poky
 
 # meta-raspberrypi URLs
 TAR_RASPBERRYPI=http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi/snapshot/meta-raspberrypi-6c6f44136f7e1c97bc45be118a48bd9b1fef1072.tar.bz2
+#http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi/snapshot/meta-raspberrypi-6c6f44136f7e1c97bc45be118a48bd9b1fef1072.tar.bz2
 GIT_RASPBERRYPI=git://git.yoctoproject.org/meta-raspberrypi
 FILE_RASPBERRYPI=meta-raspberrypi.tar.bz2
 REVISION_RASPBERRYPI=6c6f44136f7e1c97bc45be118a48bd9b1fef1072
@@ -55,6 +56,8 @@ BRANCH_MULTIMEDIA=dizzy
 FOLDER_MULTIMEDIA=meta-multimedia
 
 FOLDER_METAOE=meta-oe
+FOLDER_NETWORKING=meta-networking
+FOLDER_PYTHON=meta-python
 
 if $TAR ; then
 echo ""
@@ -80,6 +83,8 @@ rm -rf meta-openembedded-dizzy
 unzip $FILE_MULTIMEDIA
 cp -ar meta-openembedded-dizzy/$FOLDER_MULTIMEDIA ../BUILD/
 cp -ar meta-openembedded-dizzy/$FOLDER_METAOE ../BUILD/
+cp -ar meta-openembedded-dizzy/$FOLDER_NETWORKING ../BUILD/
+cp -ar meta-openembedded-dizzy/$FOLDER_PYTHON ../BUILD/
 cd ..
 
 ln -sf ../meta-YoctoCamera BUILD/meta-YoctoCamera
