@@ -12,15 +12,21 @@ Use:
 
 dd if=BUILD/YoctoCamera/tmp/deploy/images/raspberrypi/<rpi-sdimg> of=/dev/<sdcard> bs=1M
 
-mount the first partition and copy the folder
+Mount the first partition and copy the folder
 BUILD/YoctoCamera/tmp/deploy/images/raspberrypi/extlinux
 onto the sdcard.
+
+Unmount the first partition.
 
 
 The board has network configure and should come up with a wifi hotspot named "YoctoCamera".
 
+IP is 192.168.1.2 or 192.168.1.3 .
+
 If that does not work out of the box, connect the serial2usb-cable and inspect the
 terminal.
+
+(Mount the 2nd partition and adapt the network settings in etc/network/interfaces.)
 
 A service starts mjpgstreamer on port 8080.
 
