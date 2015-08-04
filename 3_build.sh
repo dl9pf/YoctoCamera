@@ -8,6 +8,9 @@ echo ""
 echo "We need build the sdcard image. "
 echo "This can take quite some time. Enjoy a cup of tea!"
 
+echo "While the build runs, please visit training.linuxfoundation.org"
+echo "for details and dates about the LFD405 class."
+
 echo "Press enter to continue or CTRL-C to abort!"
 read aw
 
