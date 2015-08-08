@@ -34,25 +34,29 @@ echo "Press enter to continue or CTRL-C to abort!"
 read aw
 
 # YOCTO URLs
-TAR_YOCTO=http://git.yoctoproject.org/cgit.cgi/poky/snapshot/poky-yocto-1.7.tar.bz2
-FILE_YOCTO=poky-yocto-1.7.tar.bz2
+TAR_YOCTO=http://git.yoctoproject.org/cgit.cgi/poky/snapshot/poky-yocto-1.8.tar.bz2
+FILE_YOCTO=poky-yocto-1.8.tar.bz2
 GIT_YOCTO=git://git.yoctoproject.org/poky
-BRANCH_YOCTO=dizzy
+BRANCH_YOCTO=fido
 FOLDER_YOCTO=poky
 
 # meta-raspberrypi URLs
-TAR_RASPBERRYPI=http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi/snapshot/meta-raspberrypi-6c6f44136f7e1c97bc45be118a48bd9b1fef1072.tar.bz2
-#http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi/snapshot/meta-raspberrypi-6c6f44136f7e1c97bc45be118a48bd9b1fef1072.tar.bz2
+#TAR_RASPBERRYPI=http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi/snapshot/meta-raspberrypi-6c6f44136f7e1c97bc45be118a48bd9b1fef1072.tar.bz2
+TAR_RASPBERRYPI=http://git.yoctoproject.org/cgit/cgit.cgi/meta-raspberrypi/snapshot/meta-raspberrypi-7457bf182c8fd550ec877ecd786a3edd16e65495.tar.bz2
 GIT_RASPBERRYPI=git://git.yoctoproject.org/meta-raspberrypi
 FILE_RASPBERRYPI=meta-raspberrypi.tar.bz2
-REVISION_RASPBERRYPI=6c6f44136f7e1c97bc45be118a48bd9b1fef1072
+#REVISION_RASPBERRYPI=6c6f44136f7e1c97bc45be118a48bd9b1fef1072
+REVISION_RASPBERRYPI=7457bf182c8fd550ec877ecd786a3edd16e65495
 FOLDER_RASPBERRYPI=meta-rpi
 
 # OE meta-multimedia URLs
-TAR_MULTIMEDIA=https://github.com/openembedded/meta-openembedded/archive/dizzy.zip
+#TAR_MULTIMEDIA=https://github.com/openembedded/meta-openembedded/archive/dizzy.zip
+#TAR_MULTIMEDIA=https://github.com/openembedded/meta-openembedded/archive/fido.zip
+TAR_MULTIMEDIA=https://github.com/openembedded/meta-openembedded/archive/7ca0d80cb6bba7b4a43e18df0d48bc1d66841a1c.zip
 GIT_MULTIMEDIA=https://github.com/openembedded/meta-openembedded.git
 FILE_MULTIMEDIA=meta-openembedded.zip
-BRANCH_MULTIMEDIA=dizzy
+#BRANCH_MULTIMEDIA=fido
+BRANCH_MULTIMEDIA=7ca0d80cb6bba7b4a43e18df0d48bc1d66841a1c
 FOLDER_MULTIMEDIA=meta-multimedia
 
 FOLDER_METAOE=meta-oe
@@ -79,12 +83,12 @@ tar -C BUILD/$FOLDER_YOCTO --strip-components=1 -xf DL/$FILE_YOCTO
 tar -C BUILD/$FOLDER_RASPBERRYPI --strip-components=1 -xf DL/$FILE_RASPBERRYPI
 
 cd DL
-rm -rf meta-openembedded-dizzy
+rm -rf meta-openembedded-$BRANCH_MULTIMEDIA
 unzip $FILE_MULTIMEDIA
-cp -ar meta-openembedded-dizzy/$FOLDER_MULTIMEDIA ../BUILD/
-cp -ar meta-openembedded-dizzy/$FOLDER_METAOE ../BUILD/
-cp -ar meta-openembedded-dizzy/$FOLDER_NETWORKING ../BUILD/
-cp -ar meta-openembedded-dizzy/$FOLDER_PYTHON ../BUILD/
+cp -ar meta-openembedded-$BRANCH_MULTIMEDIA/$FOLDER_MULTIMEDIA ../BUILD/
+cp -ar meta-openembedded-$BRANCH_MULTIMEDIA/$FOLDER_METAOE ../BUILD/
+cp -ar meta-openembedded-$BRANCH_MULTIMEDIA/$FOLDER_NETWORKING ../BUILD/
+cp -ar meta-openembedded-$BRANCH_MULTIMEDIA/$FOLDER_PYTHON ../BUILD/
 cd ..
 
 ln -sf ../meta-YoctoCamera BUILD/meta-YoctoCamera
