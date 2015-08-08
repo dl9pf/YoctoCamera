@@ -5,6 +5,7 @@ auto lo
 iface lo inet loopback
 
 # Wired or wireless interfaces
+# some usb wifi's use eth0
 auto eth0
 iface eth0 inet static
 	address 192.168.1.2
@@ -13,8 +14,12 @@ iface eth0 inet static
 	wireless-essid YoctoCamera.2
 	wireless-mode ad-hoc
 
+# some wifi's use wlan0
+# extra delay for device init
 auto wlan0
 iface wlan0 inet static
+	pre-up sleep 5
+	pre-up ifconfig wlan0 up
 	address 192.168.1.3
 	netmask 255.255.255.0
 	wireless-channel 3
